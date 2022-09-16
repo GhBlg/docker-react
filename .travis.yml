@@ -5,4 +5,7 @@ services:
 
 before_install:
   - docker build -t ghblg/docker-react -f dockerfile.dev .
-  - compose
+
+script:
+  - docker run -e CI=true ghblg/docker-react npm run test
+  
